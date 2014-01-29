@@ -1,6 +1,7 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
+  has_many :urls
   validates :email, presence: true
   validates :email, uniqueness: true
   before_create :encrypt

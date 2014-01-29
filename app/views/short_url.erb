@@ -1,0 +1,7 @@
+<div class="container">
+  <% if @url.errors.any? %>
+    <h1> The Url you entered: <%= @url.errors[:long_url] %></h1>
+    <% else %>
+  This is your short url! <%= @url.short_url %>
+  <% end %>
+</div>

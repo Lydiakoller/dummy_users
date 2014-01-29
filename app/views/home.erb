@@ -1,2 +1,20 @@
 <h1> Welcome to your home page! </h1>
-<a href = '/logout'>Logout</a>
+
+
+<form action = '/home/urls' method = 'post'>
+    Enter a url to shorten! <input type = 'text' name = 'url'></br></br>
+    <input type = 'submit' value = 'submit'>
+</form>
+
+<ul>
+<% Url.all.where(user_id: current_user.id).each do |url| %>
+<li><%= "#{url.long_url} - #{url.short_url}" %></li>
+  <% end %>
+</ul>
+
+
+</br></br>
+<form action="/logout" method="post">
+<input type="submit" value="logout">
+</form>
+</br></br>
